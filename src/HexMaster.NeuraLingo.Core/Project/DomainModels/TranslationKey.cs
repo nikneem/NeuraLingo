@@ -2,12 +2,17 @@ namespace HexMaster.NeuraLingo.Core.Project.DomainModels
 {
     public class TranslationKey
     {
-        public required string Key { get; set; }
-        public required string FullKeyPath { get; set; }
-        public List<TranslationValue> TranslationValues { get; set; } = [];
+        public string Key { get; set; }
+        public string FullKeyPath { get; set; }
+        public List<TranslationValue>? TranslationValues { get; set; } = [];
+        public List<TranslationKey>? Children { get; set; } = [];
 
         public string GetValueForLanguage(string languageId)
         {
+            if (TranslationValues == null || TranslationValues.Count == 0)
+            {
+                return FullKeyPath;
+            }
             var translationValue = TranslationValues.FirstOrDefault(x => x.LanguageId == languageId)?.Value;
             if (translationValue == null)
             {
@@ -20,5 +25,16 @@ namespace HexMaster.NeuraLingo.Core.Project.DomainModels
             return translationValue;
         }
 
+        internal TranslationKey(
+            string key,
+            string fullKeyPath,
+            List<TranslationKey>? children,
+            List<TranslationValue>? translationValues)
+        {
+            Key = key;
+            FullKeyPath = fullKeyPath;
+            Children = children;
+            TranslationValues = translationValues;
+        }
     }
 }
