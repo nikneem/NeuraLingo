@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexMaster.NeuraLingo", "HexMaster.NeuraLingo\HexMaster.NeuraLingo.csproj", "{C8746E9E-3FD2-4CDA-9E05-0D52653A860D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexMaster.NeuraLingo.Core", "HexMaster.NeuraLingo.Core\HexMaster.NeuraLingo.Core.csproj", "{BE1B4E28-C47A-423A-935A-FDDE0C9A7BDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8746E9E-3FD2-4CDA-9E05-0D52653A860D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8746E9E-3FD2-4CDA-9E05-0D52653A860D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8746E9E-3FD2-4CDA-9E05-0D52653A860D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8746E9E-3FD2-4CDA-9E05-0D52653A860D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE1B4E28-C47A-423A-935A-FDDE0C9A7BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1B4E28-C47A-423A-935A-FDDE0C9A7BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1B4E28-C47A-423A-935A-FDDE0C9A7BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1B4E28-C47A-423A-935A-FDDE0C9A7BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FA8742D-AF0F-4B42-AE76-C98DF348E68B}
+	EndGlobalSection
+EndGlobal
