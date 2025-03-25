@@ -9,7 +9,9 @@ public class Project
     public string? Description { get; set; }
     public string? ProjectFilename { get; set; }
     public List<string> SupportedLanguages { get; set; } = [];
+    public List<TranslationKey> Translations { get; set; } = [];
     public List<ProjectOutputFile> OutputFiles { get; set; } = [];
+    public string? OutputPath { get; set; }
     public required string DefaultLanguage { get; set; }
     public required string SourceFile { get; set; }
     public required string Version { get; set; }
@@ -92,6 +94,56 @@ public class Project
     }
 
 
+
+    #endregion
+
+    #region [ Export to i18n resource file ]
+
+    public async Task ExportToFile(CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(OutputPath))
+        {
+            throw new InvalidOperationException("The output path is not set");
+        }
+
+        foreach (var outputFile in OutputFiles)
+        {
+            var outputFilePath = Path.Combine(OutputPath, outputFile.Filename);
+            if (File.Exists(outputFilePath))
+            {
+                File.Delete(outputFilePath);
+            }
+
+            await using var fileStream = new FileStream(outputFilePath, FileMode.CreateNew, FileAccess.Write, FileShare.None);
+            var jsonWriterOptions = new JsonWriterOptions { Indented = true };
+            var writer = new Utf8JsonWriter(fileStream, jsonWriterOptions);
+            writer.WriteStartObject();
+            foreach (var node in Translations)
+            {
+                WriteNode(writer, node, outputFile.LanguageId, DefaultLanguage);
+            }
+            writer.WriteEndObject();
+            await writer.FlushAsync(cancellationToken);
+        }
+    }
+
+    private void WriteNode(Utf8JsonWriter writer, TranslationKey node, string language, string defaultLanguage)
+    {
+        if (node.Children?.Count > 0)
+        {
+            writer.WriteStartObject(node.Key);
+            foreach (var child in node.Children)
+            {
+                WriteNode(writer, child, language, defaultLanguage);
+            }
+            writer.WriteEndObject();
+        }
+        else
+        {
+            var value = node.GetValueForLanguage(language);
+            writer.WriteString(node.Key, value);
+        }
+    }
 
     #endregion
 
