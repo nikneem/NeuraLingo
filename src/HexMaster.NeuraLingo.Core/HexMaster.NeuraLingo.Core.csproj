@@ -10,4 +10,8 @@
     <Folder Include="Project\DomainModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HexMaster.DomainDrivenDesign" Version="3.0.1" />
+  </ItemGroup>
+
 </Project>
