@@ -126,7 +126,6 @@ public class Project
             await writer.FlushAsync(cancellationToken);
         }
     }
-
     private void WriteNode(Utf8JsonWriter writer, TranslationKey node, string language, string defaultLanguage)
     {
         if (node.Children?.Count > 0)
