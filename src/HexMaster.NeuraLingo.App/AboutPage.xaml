@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HexMaster.NeuraLingo.App.AboutPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="15"
+                             HorizontalOptions="Center">
+
+            <!-- App Logo -->
+            <Image Source="app_logo.png"
+                   HeightRequest="100"
+                   WidthRequest="100"/>
+
+            <!-- App Title -->
+            <Label Text="NeuraLingo"
+                   Style="{StaticResource Headline}"/>
+
+            <!-- App Description -->
+            <Label
+                Text="Translate. Automate. Dominate."
+                Style="{StaticResource SubHeadlineDim}"/>
+
+            <Label
+                Text="NeuraLingo is an AI-powered translation tool designed to streamline the localization of software resource files with the i18n format with speed and accuracy. Whether you're managing multilingual applications or adapting your software for global audiences, NeuraLingo intelligently translates text while preserving context, formatting, and technical nuances. With seamless integration into development workflows, NeuraLingo ensures efficient, high-quality translations that keep your software accessible and user-friendly worldwide."
+                Style="{StaticResource Dim}"
+                HorizontalTextAlignment="Center"/>
+
+            <!-- Version Info -->
+            <Label Text="Version 1.0.0"
+                   FontSize="14"
+                   TextColor="DarkGray"
+                   HorizontalOptions="Center"/>
+
+            <!-- Contact Info -->
+            <Label Text="Contact: support@yourapp.com"
+                   FontSize="14"
+                   TextColor="Blue"
+                   HorizontalOptions="Center"/>
+
+            <!-- Social Media Links -->
+            <HorizontalStackLayout Spacing="20"
+                                   HorizontalOptions="Center">
+                <ImageButton
+                    Source="{AppThemeBinding Light=github_mark_light.png, Dark=github_mark_dark.png}"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    SemanticProperties.Hint="Opens the GitHub repository"
+                    InputTransparent="False"
+                    Clicked="ImageButton_OnClicked"/>
+            </HorizontalStackLayout>
+            <!--
+            -->
+            <!-- Back Button -->
+            <!--
+            <Button Text="Back" Clicked="OnBackClicked" />-->
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

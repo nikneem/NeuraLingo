@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:HexMaster.NeuraLingo.App.Controls"
+             x:Class="HexMaster.NeuraLingo.App.MainPage" Title="Home">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+
+            <Label
+                Text="NeuraLingo"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+            <Label
+                Text="Translate. Automate. Dominate."
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level6" />
+            <controls:RecentProjectsList></controls:RecentProjectsList>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
