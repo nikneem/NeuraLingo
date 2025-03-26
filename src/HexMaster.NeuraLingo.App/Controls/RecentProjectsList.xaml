@@ -4,12 +4,15 @@
              xmlns:controls="clr-namespace:HexMaster.NeuraLingo.App.Controls"
              x:Class="HexMaster.NeuraLingo.App.Controls.RecentProjectsList">
     <VerticalStackLayout>
+        <HorizontalStackLayout Margin="4" HorizontalOptions="End">
+            <Button Text="New project"></Button>
+        </HorizontalStackLayout>
         <ScrollView>
             <VerticalStackLayout x:Name="MainPageRecentProjects">
                 <!-- List item template -->
 
             </VerticalStackLayout>
         </ScrollView>
-        <controls:RecentProjectListItem ></controls:RecentProjectListItem>
+
     </VerticalStackLayout>
 </ContentView>
