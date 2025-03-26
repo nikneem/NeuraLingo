@@ -71,9 +71,15 @@
 	  <Compile Update="AboutPage.xaml.cs">
 	    <DependentUpon>AboutPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Controls\RecentProjectListItem.xaml.cs">
+	    <DependentUpon>RecentProjectListItem.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\RecentProjectListItem.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\RecentProjectsList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

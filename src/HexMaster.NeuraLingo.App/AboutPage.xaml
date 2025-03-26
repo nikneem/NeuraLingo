@@ -48,6 +48,7 @@
                     WidthRequest="30"
                     SemanticProperties.Hint="Opens the GitHub repository"
                     SemanticProperties.Description="Go to the NeuraLingo GitHub repository"
+                    ToolTipProperties.Text="Click to Save your data" 
                     InputTransparent="False"
                     Clicked="ImageButton_OnClicked"/>
             </HorizontalStackLayout>

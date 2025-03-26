@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HexMaster.NeuraLingo.App.Controls.RecentProjectListItem">
+
+  <Border Style="{StaticResource RecentProject}" >
+    <VerticalStackLayout>
+      <Label Text="Project name"
+             Style="{StaticResource Bolder}"></Label>
+
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition  Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="d:\path\to\filename.nlp"
+               Grid.Column="0"
+               Style="{StaticResource Dim}"></Label>
+        <Label Text="12/24/2025"
+               Style="{StaticResource Dim}"
+               HorizontalTextAlignment="End"
+               Grid.Column="1"></Label>
+      </Grid>
+
+
+
+    </VerticalStackLayout>
+      <Border.GestureRecognizers>
+		    <PointerGestureRecognizer PointerEntered="PointerGestureRecognizer_OnPointerEntered" PointerExited="PointerGestureRecognizer_OnPointerExited">
+            </PointerGestureRecognizer>
+      </Border.GestureRecognizers>
+  </Border>
+
+</ContentView>
