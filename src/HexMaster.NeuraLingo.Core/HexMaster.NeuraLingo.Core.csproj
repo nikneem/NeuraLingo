@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="HexMaster.DomainDrivenDesign" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.50" />
   </ItemGroup>
 
 </Project>

@@ -6,8 +6,7 @@
 
   <Border Style="{StaticResource RecentProject}" >
     <VerticalStackLayout>
-      <Label Text="Project name"
-             Style="{StaticResource Bolder}"></Label>
+      <Label Style="{StaticResource Bolder}"/>
 
       <Grid>
         <Grid.ColumnDefinitions>

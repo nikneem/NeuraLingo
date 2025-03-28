@@ -1,11 +1,10 @@
 using System.ComponentModel;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using HexMaster.NeuraLingo.App.Models;
 
 namespace HexMaster.NeuraLingo.App.Controls;
 
-public partial class RecentProjectsList : ContentView, INotifyPropertyChanged
+public partial class RecentProjectsList
 {
 
 	private List<RecentProject> _recentProjects;
@@ -20,16 +19,12 @@ public partial class RecentProjectsList : ContentView, INotifyPropertyChanged
     
 	private void LoadRecentProjectsFromSettings()
 	{
-		//if (Preferences.ContainsKey("nl-recent-projects"))
-		//{
+		if (Preferences.ContainsKey("nl-recent-projects"))
+		{
 			var recentProjectsJson = Preferences.Get("nl-recent-projects", "[]");
 			var recentProjects = JsonSerializer.Deserialize<List<RecentProject>>(recentProjectsJson);
-			_recentProjects = recentProjects ?? [
-			
-            ];
+			_recentProjects = recentProjects ?? [];
             MainPageRecentProjects.Children.Clear();
-
-			_recentProjects.Add(new RecentProject("Testing", "Testing", DateTimeOffset.UtcNow));
 
             // Add a RecentProjectListItem for each project
             foreach (var project in _recentProjects)
@@ -40,8 +35,12 @@ public partial class RecentProjectsList : ContentView, INotifyPropertyChanged
                 };
                 MainPageRecentProjects.Children.Add(projectItem);
             }
-			
-        //}
+		}
 
 	}
+
+    private void CreateNewProject()
+    {
+        
+    }
 }
