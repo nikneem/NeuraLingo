@@ -3,7 +3,7 @@ using Microsoft.Maui.Storage;
 
 namespace HexMaster.NeuraLingo.Core.Settings;
 
-public class RecentProjectsList
+public class RecentProjectsService
 {
     private const string PreferencesKey = "nl-recent-projects";
     public Lazy<List<RecentProject>> RecentProjects => new(() => Load());
@@ -35,7 +35,7 @@ public class RecentProjectsList
         var json = JsonSerializer.Serialize(recentProjectsList);
         Preferences.Set(PreferencesKey, json);
     }
-    public static List<RecentProject> Load()
+    private static List<RecentProject> Load()
     {
         if (Preferences.ContainsKey(PreferencesKey))
         {

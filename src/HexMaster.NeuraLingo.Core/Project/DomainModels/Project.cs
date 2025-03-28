@@ -5,16 +5,16 @@ namespace HexMaster.NeuraLingo.Core.Project.DomainModels;
 
 public class Project
 {
-    public required string Name { get; set; }
+    public string Name { get; set; }
     public string? Description { get; set; }
     public string? ProjectFilename { get; set; }
     public List<string> SupportedLanguages { get; set; } = [];
     public List<TranslationKey> Translations { get; set; } = [];
-    public List<ProjectOutputFile> OutputFiles { get; set; } = [];
     public string? OutputPath { get; set; }
-    public required string DefaultLanguage { get; set; }
-    public required string SourceFile { get; set; }
-    public required string Version { get; set; }
+    public List<ProjectOutputFile> OutputFiles { get; set; } = [];
+    public string DefaultLanguage { get; set; }
+    public string SourceFile { get; set; }
+    public string Version { get; set; }
 
     #region [ Import from i18n resource file ]
 
